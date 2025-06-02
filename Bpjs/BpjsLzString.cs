@@ -551,7 +551,7 @@ namespace SIMRS25.Bpjs
                     }
                     else
                     {
-                        return null;
+                        return string.Empty;
                     }
                 }
                 result.Append(entry);
