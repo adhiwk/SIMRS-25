@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="DevExpress.Win.Design" Version="24.2.7" />
     <PackageReference Include="DotNetEnv" Version="3.1.1" />
+    <PackageReference Include="LijsDev.CrystalReportsRunner.13.0.32.x64" Version="1.4.9" />
     <PackageReference Include="MySql.Data" Version="9.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="UI.for.WinForms.AllControls.Net80">
