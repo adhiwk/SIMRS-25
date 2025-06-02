@@ -41,6 +41,8 @@
             layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)layoutControl1).BeginInit();
             layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Root).BeginInit();
@@ -51,10 +53,12 @@
             ((System.ComponentModel.ISupportInitialize)layoutControlItem3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)emptySpaceItem2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem5).BeginInit();
             SuspendLayout();
             // 
             // layoutControl1
             // 
+            layoutControl1.Controls.Add(simpleButton1);
             layoutControl1.Controls.Add(txtDecryptResult);
             layoutControl1.Controls.Add(txtToDecrypt);
             layoutControl1.Controls.Add(txtEncryptResult);
@@ -107,7 +111,7 @@
             // 
             Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             Root.GroupBordersVisible = false;
-            Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem1, emptySpaceItem1, layoutControlItem2, simpleSeparator1, layoutControlItem3, layoutControlItem4, emptySpaceItem2 });
+            Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem1, emptySpaceItem1, layoutControlItem2, simpleSeparator1, layoutControlItem3, layoutControlItem4, emptySpaceItem2, layoutControlItem5 });
             Root.Name = "Root";
             Root.Size = new Size(800, 450);
             Root.TextVisible = false;
@@ -127,9 +131,9 @@
             // 
             // emptySpaceItem1
             // 
-            emptySpaceItem1.Location = new Point(0, 398);
+            emptySpaceItem1.Location = new Point(136, 398);
             emptySpaceItem1.Name = "emptySpaceItem1";
-            emptySpaceItem1.Size = new Size(780, 32);
+            emptySpaceItem1.Size = new Size(644, 32);
             // 
             // layoutControlItem2
             // 
@@ -185,6 +189,24 @@
             emptySpaceItem2.Size = new Size(780, 17);
             emptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
+            // simpleButton1
+            // 
+            simpleButton1.ImageOptions.Image = Properties.Resources.general_printer24;
+            simpleButton1.Location = new Point(12, 410);
+            simpleButton1.Name = "simpleButton1";
+            simpleButton1.Size = new Size(132, 28);
+            simpleButton1.StyleController = layoutControl1;
+            simpleButton1.TabIndex = 8;
+            simpleButton1.Text = "simpleButton1";
+            // 
+            // layoutControlItem5
+            // 
+            layoutControlItem5.Control = simpleButton1;
+            layoutControlItem5.Location = new Point(0, 398);
+            layoutControlItem5.Name = "layoutControlItem5";
+            layoutControlItem5.Size = new Size(136, 32);
+            layoutControlItem5.TextVisible = false;
+            // 
             // SecurityText
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -207,6 +229,7 @@
             ((System.ComponentModel.ISupportInitialize)layoutControlItem3).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem4).EndInit();
             ((System.ComponentModel.ISupportInitialize)emptySpaceItem2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem5).EndInit();
             ResumeLayout(false);
         }
 
@@ -225,5 +248,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }
