@@ -17,10 +17,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Bpjs\" />
-    <Folder Include="Dtos\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Update=".env">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
