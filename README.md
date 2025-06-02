@@ -1,6 +1,6 @@
 # SIMRS-25
-SIMRS Perjuangan, Kita mulai dari Tahun 2025 ini :)
-Desktop Base aplication, based on khanza simrs, simgos and many simrs apps.
+- SIMRS Perjuangan, Kita mulai dari Tahun 2025 ini :)
+- Desktop Base aplication, based on khanza simrs, simgos and many simrs apps.
 
 # Tools Development
 - Visual Studi0 2022 ( Winform App .NET 9)
