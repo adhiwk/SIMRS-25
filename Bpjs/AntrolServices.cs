@@ -76,15 +76,24 @@ namespace SIMRS25.Bpjs
             if (string.IsNullOrWhiteSpace(result))
                 throw new InvalidOperationException("Response is empty.");
 
-            var jsonResponse = JsonConvert.DeserializeObject<AntreanOnlineBpjsDto<JToken>>(result.Trim());
+            var jsonResponse = JsonConvert.DeserializeObject<AntreanOnlineBpjsDto<JToken>>(result.Trim()) 
+                ?? throw new InvalidOperationException("Failed to deserialize response.");
+
+            if (jsonResponse.metadata == null)
+                throw new InvalidOperationException("Response metadata is missing.");
 
             int code = jsonResponse.metadata.code;
             if (code != 200 && code != 1)
                 throw new ApplicationException($"BPJS error: {jsonResponse.metadata.message} (code: {code})");
 
+            if (jsonResponse.response == null)
+                throw new InvalidOperationException("Response metadata is missing.");
+
             string finalJson = DecryptResponse(credentials, jsonResponse.response.ToString());
-            Console.WriteLine(finalJson);
-            return JsonConvert.DeserializeObject<TDto>(finalJson.Trim());
+         
+
+            return JsonConvert.DeserializeObject<TDto>(finalJson.Trim())
+                ?? throw new InvalidOperationException("Failed to deserialize decrypted response.");
         }
 
         /// <summary>

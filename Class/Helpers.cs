@@ -125,7 +125,7 @@ namespace SIMRS25.Class
                 if (await mySqlDataReader.ReadAsync())
                 {
                     // Mengambil waktu sebagai TimeSpan
-                    jam = TimeSpan.Parse(mySqlDataReader["JAM"].ToString());
+                    jam = TimeSpan.Parse(mySqlDataReader["JAM"]!.ToString()!);
                 }
             }
             catch (Exception ex)
