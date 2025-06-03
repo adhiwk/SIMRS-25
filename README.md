@@ -1,6 +1,10 @@
-# SIMRS-25
+# SIMRS-25 (Desktop Front End)
 SIMRS Perjuangan, Kita mulai dari Tahun 2025 ini :)
 Desktop Base aplication, based on khanza simrs, simgos and many simrs apps.
+
+- Aplikasi desktop winform digunakan sebagai front end.
+- Front end dengan web-base juga akan dikembangan untuk keperluan tertentu.
+- Untuk back end bisa di cek dilink berikut (next)
 
 # Tools Development
 - Visual Studi0 2022 ( Winform App .NET 9)
