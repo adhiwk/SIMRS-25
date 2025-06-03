@@ -65,13 +65,12 @@ namespace SIMRS25.Class
         }
         void MyLabelFormatOnJobQueued(object sender, PrintJobEventArgs printJobEventInfo)
         {
-            // Cast the sender into a Format object 
-            LabelFormatDocument btFormat = sender as LabelFormatDocument;
-            // Check to see if the object is not null 
-            // If it is, the sender was NOT a Format 
-            if (btFormat != null)
+            if (printJobEventInfo == null)
+                return;
+
+            if (sender is LabelFormatDocument btFormat)
             {
-                //MessageBox.Show("Terdapat salah format", "Error");
+                // Lakukan penanganan jika diperlukan
             }
         }
     }

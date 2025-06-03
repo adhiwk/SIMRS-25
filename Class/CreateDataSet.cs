@@ -28,8 +28,8 @@ namespace SIMRS25.Class
             string datasetName = "DynamicDataset", 
             string tableName = "DynamicTable")
         {
-            DataSet dataSet = new DataSet(datasetName);
-            DataTable dataTable = new DataTable(tableName);
+            DataSet dataSet = new(datasetName);
+            DataTable dataTable = new(tableName);
 
             if (dataList == null)
                 return dataSet;

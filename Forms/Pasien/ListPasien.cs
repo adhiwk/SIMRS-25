@@ -1,10 +1,11 @@
-﻿using System;
-using System.Data;
+﻿using DevExpress.XtraPrinting.Native;
 using MySql.Data.MySqlClient;
-using System.Windows.Forms;
 using SIMRS25.Class;
 using SIMRS25.Dtos;
 using SIMRS25.Forms.Utils;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 namespace SIMRS25.Forms.Pasien
 {
@@ -85,7 +86,7 @@ namespace SIMRS25.Forms.Pasien
             using (EntryPasien frmEntryPasien = new EntryPasien())
             {
                 frmEntryPasien.isAdd = false;
-                frmEntryPasien.strNoRM = grdPasien.CurrentRow.Cells[0].Value.ToString().Trim();
+                frmEntryPasien.strNoRM = grdPasien.CurrentRow.Cells[0].Value?.ToString()?.Trim();
                 frmEntryPasien.ShowDialog();
                 if (frmEntryPasien.strNoRM != "null")
                 {
@@ -190,32 +191,34 @@ namespace SIMRS25.Forms.Pasien
 
         private void BtnCetakLabel_Click(object sender, EventArgs e)
         {
-            try
+            var row = grdPasien.CurrentRow;
+            if (row.Cells[0].Value == null || row.Cells[1].Value == null ||
+                row.Cells[2].Value == null || row.Cells[4].Value == null ||
+                row.Cells[5].Value == null ||
+                !DateTime.TryParse(row.Cells[5].Value.ToString(), out var tglLahir))
             {
-                PrintLabel printer = new PrintLabel();
-                printer.CetakLabel(grdPasien.CurrentRow.Cells[0].Value.ToString(),
-                        grdPasien.CurrentRow.Cells[1].Value.ToString(),
-                        grdPasien.CurrentRow.Cells[2].Value.ToString(),
-                        grdPasien.CurrentRow.Cells[4].Value.ToString(),
-                        DateTime.Parse(grdPasien.CurrentRow.Cells[5].Value.ToString()),
-                        Helper.HitungUmur(DateTime.Parse(grdPasien.CurrentRow.Cells[5].Value.ToString()))
-                    );
+                MessageBox.Show("Data tidak lengkap atau tanggal lahir tidak valid.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            catch (Exception)
-            {
 
-                throw;
-            }
+            new PrintLabel().CetakLabel(
+                row.Cells[0].Value.ToString(),
+                row.Cells[1].Value.ToString(),
+                row.Cells[2].Value.ToString(),
+                row.Cells[4].Value.ToString(),
+                tglLahir,
+                Helpers.HitungUmur(tglLahir)
+            );
         }
+
 
         private void BtnCetakGelang_Click(object sender, EventArgs e)
         {
             try
             {
-                PrintLabel printer = new PrintLabel();
-                printer.CetakGelang(grdPasien.CurrentRow.Cells[0].Value.ToString(),
-                        grdPasien.CurrentRow.Cells[1].Value.ToString(),
-                        DateTime.Parse(grdPasien.CurrentRow.Cells[5].Value.ToString()));
+                new PrintLabel().CetakGelang(grdPasien.CurrentRow.Cells[0].Value?.ToString()?.Trim(),
+                        grdPasien.CurrentRow.Cells[1].Value?.ToString()?.Trim(),
+                        DateTime.Parse(grdPasien.CurrentRow.Cells[5].Value?.ToString().Trim()));
             }
             catch (Exception)
             {

@@ -29,7 +29,7 @@ namespace SIMRS25.Dtos
         public string? namadokter { get; set; }
         public string? kodepoli { get; set; }
         public string? namapoli { get; set; }
-        public int? kodedokter { get; set; }
+        public int kodedokter { get; set; }
     }
 
     public class AntrolResRefJadwalDokter : List<ListJadwalDokter>

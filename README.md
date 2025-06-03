@@ -13,4 +13,3 @@
  - MySql.Data" Version="9.3.0"
  - Newtonsoft.Json" Version="13.0.3" 
  - UI.for.WinForms.AllControls.Net80
-
