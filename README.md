@@ -1,6 +1,6 @@
 # SIMRS-25 (Desktop Front End)
 SIMRS Perjuangan, Kita mulai dari Tahun 2025 ini :)
-Developt based on khanza simrs, simgos and many simrs apps.
+Development based on khanza simrs, simgos and many simrs apps.
 
 - Aplikasi desktop winform digunakan sebagai front end.
 - Front end dengan web-base juga akan dikembangan untuk keperluan tertentu.
